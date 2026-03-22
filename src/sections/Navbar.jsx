@@ -1,11 +1,17 @@
 import { useState } from "react";
 import { X, Menu } from "lucide-react";
+import clsx from "clsx";
+import useScrollPosition from "../hooks/useScrollPosition";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const scrollY = useScrollPosition();
 
   return (
-    <nav className="sticky top-0 z-50 bg-white border-b border-gray-100 px-6 py-4">
+    <nav className={clsx(
+      "sticky top-0 z-50 bg-white px-6 py-4 transition-shadow duration-200",
+      scrollY > 80 && "shadow-md" // <- shadow only appears after 80px scroll
+    )}>
 
       {/* Container - limits max width, centers content */}
       <div className="max-w-6x1 mx-auto flex justify-between items-center">
