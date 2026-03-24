@@ -11,3 +11,7 @@
   /* Font - use as font-sans */
   --font-sans: 'Plus Jakarta Sans', sans-serif;
 }
+
+.img {
+  @apply grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-200
+}
