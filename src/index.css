@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+body {
+  @apply bg-gray-700 text-white;
+}
+
 @theme {
   /* Brand Colors - use as bg-teal-500, text-navy900 */
   --color-teal-500: #00C9A7;

@@ -5,26 +5,25 @@ import FeatureCard from './sections/PassingProps';
 import { Zap, Landmark, ShieldHalf } from "lucide-react";
 
 function App() {
+  const features = [
+    { icon: <Zap size={24} />, title: "Free transfers", description: "..." },
+    { icon: <Zap size={24} />, title: "Free transfers", description: "..." },
+    { icon: <Zap size={24} />, title: "Free transfers", description: "..." },
+  ]
   return (
     <>
       <Navbar />
       <Hero />
-      <div className="flex gap-6 px-10 justify-content-center">
-        <FeatureCard
-          icon={<Zap size={24} />}
-          title="Free transfers"
-          description="Create a financial experience..."
-        />
-        <FeatureCard
-          icon={<Landmark size={24} />}
-          title="Free transfers"
-          description="Create a financial experience..."
-        />
-        <FeatureCard
-          icon={<ShieldHalf size={24} />}
-          title="Free transfers"
-          description="Create a financial experience..."
-        />
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-10">
+        {features.map((feature) => (
+          <FeatureCard
+            key={feature.title}
+            icon={feature.icon}
+            title={feature.title}
+            description={feature.description}
+          />
+        ))}
       </div>
     </>
   )
